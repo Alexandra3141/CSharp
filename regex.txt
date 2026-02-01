@@ -1,0 +1,18 @@
+Regex logic (regular expression) refers to using structured patterns of characters to match, search, validate, or manipulate strings. It uses special operators for logical operations like alternatives (|), 
+character sets [abc], quantifiers *, +, ?, and anchors ^, $ to define complex search criteria in programming languages like Python, JavaScript, Java, C#. 
+
+Logical OR (|): Matches either the expression before or after the pipe, e.g., cat|dog matches "cat" or "dog".
+Character Classes ([]): Matches any single character within the brackets, e.g., [aeiou] matches any vowel. [0-9] matches any digit.
+Quantifiers: Define how often a character or group repeats.
+* : 0 or more times.
++ : 1 or more times.
+? : 0 or 1 time.
+Anchors (^, $): ^ matches the start of a string, $ matches the end.
+Special Sequences: \d (digit), \w (word character), \s (whitespace), \b (word boundary). 
+
+Common Use Cases
+Validation: Ensuring input matches a format, such as emails ([\w.-]+@[\w.-]+\.\w+).
+Extraction: Finding specific data, such as pulling all numbers from a text using \d+.
+Replacement: Replacing, for example, multiple spaces with a single space. 
+Example
+The regex ^[A-Za-z]+-\d{3}$ matches a word (letters), followed by a hyphen, and then exactly three digits (e.g., "abc-123"). 
