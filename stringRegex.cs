@@ -2,10 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;      //asta e pentru regex
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
-//explicatia pentru logica regex o sa fie in fisierul regex.txt
 
 class StringTest
 {
@@ -143,6 +141,21 @@ on-site Training and Consulting";
                 Console.WriteLine("site: {0}", match.Groups["site"]);
             }
         }
-        //10.2.4 + explicatia anterioara
+        Console.WriteLine();
+        string s20 = "04:03:27 Jesse 0.0.0.127 Liberty ";
+        regex = new Regex(@"(?<time>(\d|\:)+)\s" + @"(?<company>\S+)\s" + @"(?<ip>(\d|\.)+)\s" + @"(?<company>\S+)\s");
+        matches = regex.Matches(s20);
+        foreach(Match match in matches)
+        {
+            if (match.Length != 0)
+            {
+                Console.WriteLine("\nmatch: {0}", match.ToString());
+                Console.WriteLine("time: {0}", match.Groups["time"]);
+                Console.WriteLine("ip: {0}", match.Groups["ip"]);
+                Console.WriteLine("company: {0}", match.Groups["company"]);
+                foreach(Capture cap in match.Groups["company"].Captures)
+                    Console.WriteLine("cap: {0}", cap.ToString());
+            }
+        }        
     }
 }
